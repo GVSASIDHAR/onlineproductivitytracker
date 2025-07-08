@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/getstarted.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anta&family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Major+Mono+Display&family=Manrope:wght@200..800&family=Michroma&family=Orbitron:wght@400..900&family=Pixelify+Sans:wght@400..700&family=Tektur:wght@400..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="d-flex" style="min-height: 100vh;">
+        <!-- Left Side Navigation -->
+        <nav class="bg-dark text-white p-3" style="width: 200px;">
+            <ul class="nav flex-column">
+                <h3>Productivity Tracker</h3>
+                <br>
+                <li class="listitem nav-item mb-2"><a href="dashboard.html" class="nav-link text-white">Home</a></li>
+                <li class="listitem nav-item mb-2"><a href="tasklist.html" class="nav-link text-white">Task List</a></li>
+                <li class="listitem nav-item mb-2"><a href="analytics.html" class="nav-link text-white">Analytics</a></li>
+                <li class="listitem nav-item mb-2"><a href="index.html" class="nav-link text-white">Logout</a></li>
+            </ul>
+        </nav>
+
+        <!-- Right Side Content -->
+        <div class="flex-grow-1 p-4">
+            <h2 class="mb-4 text-center">Task List</h2>
+
+            <!-- Alert Box -->
+            <div id="taskAlertBox"></div>
+
+            <!-- Filters Section -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h4>Filters</h4>
+                <button class="btn btn-light" id="clearFiltersBtn">Clear Filters</button>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-4 mb-3">
+                    <label for="filterDeadline" class="form-label">Filter by Deadline</label>
+                    <select id="filterDeadline" class="form-select">
+                        <option value="all">All</option>
+                        <option value="today">Today</option>
+                        <option value="overdue">Overdue</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="filterPriority" class="form-label">Filter by Priority</label>
+                    <select id="filterPriority" class="form-select">
+                        <option value="all">All</option>
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="filterCategory" class="form-label">Filter by Category</label>
+                    <select id="filterCategory" class="form-select">
+                        <option value="all">All</option>
+                        <option value="Work">Work</option>
+                        <option value="Study">Study</option>
+                        <option value="Personal">Personal</option>
+                    </select>
+                </div>
+            </div>
+                <h4>Your Tasks ! </h4>
+            <!-- Add Task Button -->
+            <div class="mb-4 text-end">
+                <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#taskModal">Add Task</button>
+            </div>
+
+            <!-- Task List -->
+            <ul class="list-group" id="taskList"></ul>
+        </div>
+    </div>
+
+    <!-- Task Modal -->
+    <div class="modal fade" id="taskModal" tabindex="-1" aria-labelledby="taskModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-dark" id="taskModalLabel">Add New Task</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="taskInput" class="form-label">Task Name</label>
+                        <input type="text" id="taskInput" class="form-control" placeholder="Enter task name">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="taskPriority" class="form-label">Priority</label>
+                        <select id="taskPriority" class="form-select">
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="taskCategory" class="form-label">Category</label>
+                        <select id="taskCategory" class="form-select">
+                            <option value="Work">Work</option>
+                            <option value="Study">Study</option>
+                            <option value="Personal">Personal</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="taskDeadline" class="form-label">Deadline</label>
+                        <input type="date" id="taskDeadline" class="form-control">
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-success" id="saveTaskBtn">Save Task</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/task.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

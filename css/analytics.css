@@ -1,0 +1,57 @@
+/* analytics.css */
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family:'Times New Roman', Times, serif
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+}
+
+.sidebar a.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.content {
+    margin-left: 250px;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 60px;
+        min-width: 60px;
+        padding: 10px;
+    }
+
+    .content {
+        margin-left: 60px;
+    }
+
+    .sidebar h4 {
+        font-size: 14px;
+    }
+
+    .sidebar a {
+        font-size: 12px;
+        padding: 5px 0;
+    }
+}
+.semi-circle {
+    width: 250px;
+    height: 125px;
+    background: #e9ecef;
+    border-top-left-radius: 125px;
+    border-top-right-radius: 125px;
+    position: relative;
+    overflow: hidden;
+}

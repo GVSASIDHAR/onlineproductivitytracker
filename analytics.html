@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/analytics.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/getstarted.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anta&family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Major+Mono+Display&family=Manrope:wght@200..800&family=Michroma&family=Orbitron:wght@400..900&family=Pixelify+Sans:wght@400..700&family=Tektur:wght@400..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="d-flex" style="min-height: 100vh;">
+        <!-- Left Side Navigation -->
+        <nav class="bg-dark text-white p-3" style="width: 200px;">
+            <ul class="nav flex-column">
+                <h3>Productivity Tracker</h3>
+                <br>
+                <li class="listitem nav-item mb-2"><a href="dashboard.html" class="nav-link text-white">Home</a></li>
+                <li class="listitem nav-item mb-2"><a href="tasklist.html" class="nav-link text-white">Task List</a></li>
+                <li class="listitem nav-item mb-2"><a href="analytics.html" class="nav-link text-white">Analytics</a></li>
+                <li class="listitem nav-item mb-2"><a href="index.html" class="nav-link text-white">Logout</a></li>
+            </ul>
+        </nav>
+
+        <!-- Right Side Content -->
+        <div class="flex-grow-1 p-4">
+            <h2 class="mb-4 text-center">Analytics Dashboard</h2>
+
+            <!-- Overall Progress Section -->
+            <h4 class="mb-3">Overall Progress</h4>
+            <div class="row text-center mb-5">
+                <div class="col-md-4">
+                    <canvas id="completionChart" width="200" height="200"></canvas>
+                    <p class="mt-2">Completion Status</p>
+                </div>
+                <div class="col-md-4">
+                    <canvas id="categoryChart" width="200" height="200"></canvas>
+                    <p class="mt-2">Category Distribution</p>
+                </div>
+                <div class="col-md-4">
+                    <canvas id="priorityChart" width="200" height="200"></canvas>
+                    <p class="mt-2">Priority Distribution</p>
+                </div>
+            </div>
+
+            <!-- Task-Wise Progress Section -->
+            <h4 class="mb-3">Task-wise Progress</h4>
+            <div id="taskWiseContainer" class="row">
+                <!-- Task-specific mini pie charts will be injected here -->
+            </div>
+
+            <div id="noTaskMsg" class="text-center text-danger fw-bold mt-4" style="display: none;">
+                No tasks available to analyze.
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="js/analytics.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
