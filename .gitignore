@@ -1,0 +1,25 @@
+# Ignore Python virtual environment
+venv/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore environment files
+.env
+
+# Ignore IDE/editor configs
+.vscode/
+.idea/
+
+# Ignore OS system files
+.DS_Store
+Thumbs.db
+# Flask instance folder or database (optional)
+instance/
+*.log
+
+# SQLite DB (if used locally at any point)
+*.sqlite3

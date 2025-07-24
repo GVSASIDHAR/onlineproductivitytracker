@@ -1,0 +1,42 @@
+body{
+    background-color:black;
+    margin: 0;
+    padding: 0; 
+}
+
+.login-container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 400px;
+    animation: slideIn 1s ease-in;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+    user-select: none;
+    color: #007bff;
+}
+
+.toggle-password:hover {
+    text-decoration: underline;
+}
+
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+@media (max-width: 600px) {
+    .login-container {
+        padding: 2rem 1rem;
+    }
+}

@@ -1,0 +1,25 @@
+.gauge-section {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .top-section {
+        flex-direction: column;
+    }
+
+    .gauge-section {
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+
+    .button-section button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .bottom-section button {
+        width: 100%;
+    }
+}
